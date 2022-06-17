@@ -1,0 +1,91 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: sans-serif;
+}
+
+.container{
+    width: 100%;
+}
+
+#img{
+    width: 150px;
+    height: 180px;
+    margin-left: 28%;
+}
+
+#img-detail{
+    width: 300px;
+    height: 300px;
+    margin-left: 20px;
+}
+
+#texto-detail{
+    margin-right: 80%;
+}
+
+.zoom{
+    overflow: hidden;
+}
+
+.zoom img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.zoom:hover img{
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.bloco {
+    float: left;
+    width: 30%;
+    height: 22em;
+    margin-left: 2%;
+    margin-bottom: 20px;
+}
+
+.center{
+    margin-left: 40%;
+}
+
+nav{
+    border: none;
+}
+
+tr.htmx-swapping td {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+  }
+
+.conteudo{
+    width: 100%;
+    position: static;
+}
+
+.rowdetail{
+    width: 100%;
+}
+
+#teste{
+    margin-top: -15em;
+    margin-left: 30em;
+}
+
+#autor{
+    margin-top: 2em;
+    margin-left: 30em;
+}
+
+#genero{
+    margin-top: 3em;
+    margin-left: 30em;
+}
+
+#descrpt{
+    margin-top: 50em;
+}

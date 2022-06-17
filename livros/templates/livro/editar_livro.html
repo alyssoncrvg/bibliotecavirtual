@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="." method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <div class="cadastro">
+        <div class="row align-items-start">
+            <div class="col-4">
+                <label for="exampleFormControlInput1">ISBN de 13 dígitos</label>
+                <input type="text" min="13" max="13" name="isbn" value="{{ Livro.isbn }}" class="form-control" id="isbn" onkeyup="numero(this)">
+            </div>
+            <div class="col-7">
+                <label for="exampleFormControlInput1">Título</label>
+                <input type="text" name="titulo" value="{{ Livro.titulo }}" class="form-control" id="titulo">
+            </div>
+        </div>
+        <div class="row align-items-end">
+            <div class="col-6">
+                <label for="exampleFormControlInput1">Autor</label>
+                <input type="text" name="autor" value="{{ Livro.autor }}" class="form-control">
+            </div>
+            <div class="col-1">
+                <label>Gênero</label>
+                {{ form.genero }}
+            </div>
+            
+        </div>
+        <div class="col-6">
+            <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+            {{ form.descricao }}
+        </div>
+        <div class="col-6">
+            <label for="exampleFormControlInput1">Imagem</label>
+            <img width="100px" height="150px" src="{{ Livro.foto.url }}">
+            {{ form.foto }}
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn btn-success">
+                Enviar
+            </button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

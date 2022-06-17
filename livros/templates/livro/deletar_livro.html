@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    <h1>Tem certeza que deseja deletar?</h1>
+    <button type="submit" class="btn btn-danger">
+        Sim
+    </button>
+    <div class="rowdetail">
+        <div class="conteudo">
+            <div class="col-md-1">
+                <img id='img-detail'  src="{{ livro.foto.url }}">
+            </div>
+        </div>
+        <div id="teste">
+            <h1>{{ livro.titulo }}</h1>
+        </div>
+        <br>
+        <div id="autor">
+            <h3>Por: {{ livro.autor }}</h3>
+        </div>
+        <div id="genero">
+            {% for genero in livro.genero.all %}
+                Gêneros: {{ genero }}
+            {% endfor %}
+        </div>
+    </div>
+    
+</form>
+
+{% endblock content %}

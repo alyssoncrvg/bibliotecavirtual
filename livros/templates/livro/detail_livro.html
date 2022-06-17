@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="rowdetail">
+    <div class="conteudo">
+        <div class="col-md-1">
+            <img id='img-detail'  src="{{ livro.foto.url }}">
+        </div>
+    </div>
+    <div id="teste">
+        <h1>{{ livro.titulo }}</h1>
+    </div>
+    <br>
+    <div id="autor">
+        <h3>Por: {{ livro.autor }}</h3>
+    </div>
+    <div id="genero">
+        {% for genero in livro.genero.all %}
+            Gêneros: {{ genero }}
+        {% endfor %}
+    </div>
+</div>
+
+<br>
+<br>
+
+    <div id="descrpt'">
+        {{ livro.descricao }}
+    </div>
+        <div>
+            <a href="{% url 'editar_livro' livro.id %}">
+                <button class='btn btn-warning'>
+                    Editar
+                </button>
+            </a>
+            
+            
+            <a href="{% url 'deletar_livro' livro.id %}">
+                <button class="btn btn-danger">
+                    Deletar
+                </button>
+            </a>
+        </div>
+
+{% endblock content %}

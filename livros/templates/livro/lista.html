@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <form class="d-flex" method="get">
+        <input type="text" name="buscar_livro" class='form-control' placeholder="Buscar Lívro">
+        <button class="btn btn-light" type="submit">
+          <span class="text">Buscar</span>
+          <i class="ri-check-line icon"></i>
+        </button>
+    </form>
+    <br>
+{% for i in list_livro %}
+
+
+    <div class="bloco">
+        <div class="zoom">
+        <a href="livro/{{ i.pk }}"><img id='img' src="{{ i.foto.url }}"></a>
+        </div>
+        <div class="text-center">
+            <P>Título: {{ i.titulo }}</P>
+        </div>
+        <div class="text-center">
+            Autor: {{ i.autor }}
+        </div>
+        
+    </div>
+    
+
+
+{% endfor %}
+</div>
+{% endblock content %}
